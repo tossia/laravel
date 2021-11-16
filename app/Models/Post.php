@@ -20,13 +20,11 @@ class Post extends Model {
     /*
      * public function getRouteKeyName() {
      * return parent::getRouteKeyName(); 
-     * 
      * or 
-     * 
      * return 'slug';
      * 
      */
-    protected function category() {
+    public function category() {
         return $this->belongsTo(Category::class);
     }
 
