@@ -7,7 +7,9 @@
             <a href="/categories/{{$post->category->slug;}}">{{ $post->category->name;}}</a>
         </p>
         <p>Created : {{ $post->created_at; }}</p>
-        <p>{{$post->excerpt; }}  <a href="/posts/{{ $post->slug; }}">Read suite..</a></p>
+        <p>{{$post->excerpt; }}
+            <a href="/posts/{{ $post->slug; }}"><i>Read suite..</i></a>
+        </p>
         <hr size="3" color="#0000dd" />
     </article>
 
