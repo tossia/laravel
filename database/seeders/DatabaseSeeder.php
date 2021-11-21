@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -27,8 +25,8 @@ class DatabaseSeeder extends Seeder {
         ]);
 
         Post::factory([
-        'user_id' => $user->id
-        ])
+            'user_id' => $user->id
+        ]);
     }
 
 }
