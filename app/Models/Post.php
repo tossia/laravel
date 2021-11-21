@@ -10,6 +10,8 @@ class Post extends Model {
 
     use HasFactory;
 
+    //To minimize nb of queries
+    protected $with = ['category', 'author'];
     //Aloid to fullfil
     protected $fillable = ['title', 'excerpt', 'body', 'category_id', 'slug'];
 

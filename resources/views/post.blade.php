@@ -20,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
             </p>
             <p>{!! $post->body; !!}</p>
 
-            <a href = "/">Go back</a>
+            <a href = "/">Back to Posts page</a>
         </article>
 
     </body>

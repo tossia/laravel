@@ -28,7 +28,7 @@ Route::get('/', function () {
 //    });
 
     return view('posts', [
-'posts' => Post::latest('created_at')->with('category', 'author')->get()
+'posts' => Post::latest('created_at')->get()
     ]);
 });
 

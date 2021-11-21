@@ -1,14 +1,17 @@
 <?php
 
-use App\Models\Post;
-use Illuminate\Contracts\Auth\Authenticatable;
+namespace App\Models;
+
+//Illuminate\Auth\Authenticatable;
+//use Illuminate\Foundation\Auth\Authenticatable;
+
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-namespace App\Models;
-
-class User extends Authenticatable {
+class User extends Model {
 
     use HasApiTokens,
         HasFactory,
