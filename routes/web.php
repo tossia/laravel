@@ -22,13 +22,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-//To register in logs
-    //   \Illuminate\Support\Facades\DB::listen(function ($query) {
-//        logger($query->sql, $query->bindings);
-//    });
-
     return view('posts', [
-'posts' => Post::latest('created_at')->get()
+'posts' => Post::latest('created_at')->get(),
+ 'categories' => Category::all()
     ]);
 });
 
@@ -40,12 +36,15 @@ Route::get('posts/{post:slug}', function (Post $post) {//Post::where('slug', $po
 
 Route::get('categories/{category:slug}', function (Category $category) {
     return view('posts', [
-'posts' => $category->posts
+'posts' => $category->posts,
+'currentCategory'=> $category,
+ 'categories' => Category::all()
     ]);
 });
 
 Route::get('authors/{author}', function (Category $author) {
     return view('posts', [
-'posts' => $author->posts
+'posts' => $author->posts,
+ 'categories' => Category::all()
     ]);
 });
