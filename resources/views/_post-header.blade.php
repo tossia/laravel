@@ -43,8 +43,7 @@
                 @foreach ($categories as $category)
                 <x-dropdown-link
                     href="/categories/{{$category->slug}}"
-
-                    :active="isset($currentCategory) && $currentCategory-> is($category)"
+                    :active="request()->is('categories/'.$category->slug)"
                     >{{ucwords($category->name)}}</x-dropdown-link>
 
                 @endforeach
