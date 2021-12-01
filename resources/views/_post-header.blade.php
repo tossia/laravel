@@ -38,7 +38,7 @@
                         </svg>
                     </button>
                 </x-slot>
-                <x-dropdown-link href="/">All Categories</x-dropdown-link>
+                <x-dropdown-link href="/" :active="request()->routeIs('home')">All Categories</x-dropdown-link>
 
                 @foreach ($categories as $category)
                 <x-dropdown-link
