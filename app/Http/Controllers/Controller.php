@@ -13,9 +13,8 @@ use Illuminate\View\View;
 use Symfony\Component\Routing\Route;
 use function view;
 
-Route::resource('photos', PhotoController::class);
-
-Route::get('/user/{id}', [UserController::class, 'show']);
+//Route::resource('photos', PhotoController::class);
+//Route::get('/user/{id}', [UserController::class, 'show']);
 
 class Controller extends BaseController {
 
