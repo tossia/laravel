@@ -11,6 +11,7 @@ class Post extends Model {
 
     use HasFactory;
 
+    protected $guarded;
 //To minimize nb of queries
     protected $with = ['category', 'author'];
 //Aloid to fullfil
@@ -36,6 +37,16 @@ class Post extends Model {
             $query
                     ->where('title', 'like', '%' . $search . '%')
                     ->orWhere('body', 'like', '%' . $search . '%');
+        });
+
+        $query->when($filters['category'] ?? false, function ($query, $category) {
+
+            $query
+                    ->whereExists(fn($query) =>
+                            $query->from('category')
+                            ->whereColumn('categories.id', 'posts.category_id')
+                            ->where('categories.slug', $category)
+            );
         });
     }
 
